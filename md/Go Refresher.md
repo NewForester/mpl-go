@@ -46,6 +46,66 @@ Go comes with language tools that encourage a consistent approach to many tasks,
 
 The official web-site is [https://golang.org/](golang.org).
 
+## Installation, Upgrade, Removal
+
+### Installation
+
+Go is available from Debian repositories but is inevitably an out of date version.
+Best to install the latest stable (binary) version from the Go project.
+
+#### Officially
+
+For *nix systems, download the appropriate tar-ball, then unpack:
+
+```bash
+    $ sudo tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
+```
+
+You are left to alter your PATH to include _/usr/local/go/bin_.
+
+The tar-ball is the order of 110 Mb and the final install 350 Mb.
+
+#### Alternatively
+
+If you are installing language tools on another volume:
+
+```bash
+    $ mkdir /media/work/lang/go;
+    $ sudo ln -s /media/work/lang/go/ /usr/local;
+
+    $ tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
+```
+
+#### Binaries
+
+You do not need to alter your PATH if _/usr/local/bin_ is already on it:
+
+```bash
+    $ sudo ln -s /usr/local/go/bin/* /usr/local/bin;
+```
+
+There are only three binaries.
+
+### Upgrade
+
+The instructions state to delete your current installation and install the upgrade as for a new installation.
+
+### Removal
+
+It a simple as deleteing the top directory:
+
+```bash
+    rm -r /usr/local/go
+```
+
+and/or:
+
+```bash
+    rm -r /media/work/lang/go
+```
+
+Do not forget to tidy your PATH.
+
 ---
 
 *mpl-go* by NewForester.

@@ -22,6 +22,32 @@
 <p>Go has a package system that includes remote management and online documentation but it is not as complete as those of Rust or Node.js since there is no central repository.</p>
 <p>Go comes with language tools that encourage a consistent approach to many tasks, including code formatting.</p>
 <p>The official web-site is <a href="golang.org">https://golang.org/</a>.</p>
+<h2 id="installation-upgrade-removal">Installation, Upgrade, Removal</h2>
+<h3 id="installation">Installation</h3>
+<p>Go is available from Debian repositories but is inevitably an out of date version. Best to install the latest stable (binary) version from the Go project.</p>
+<h4 id="officially">Officially</h4>
+<p>For *nix systems, download the appropriate tar-ball, then unpack:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">    $ <span class="kw">sudo</span> <span class="kw">tar</span> -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz</code></pre>
+<p>You are left to alter your PATH to include <em>/usr/local/go/bin</em>.</p>
+<p>The tar-ball is the order of 110 Mb and the final install 350 Mb.</p>
+<h4 id="alternatively">Alternatively</h4>
+<p>If you are installing language tools on another volume:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">    $ <span class="kw">mkdir</span> /media/work/lang/go;
+    $ <span class="kw">sudo</span> <span class="kw">ln</span> -s /media/work/lang/go/ /usr/local;
+
+    $ <span class="kw">tar</span> -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz</code></pre>
+<h4 id="binaries">Binaries</h4>
+<p>You do not need to alter your PATH if <em>/usr/local/bin</em> is already on it:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">    $ <span class="kw">sudo</span> <span class="kw">ln</span> -s /usr/local/go/bin/* /usr/local/bin;</code></pre>
+<p>There are only three binaries.</p>
+<h3 id="upgrade">Upgrade</h3>
+<p>The instructions state to delete your current installation and install the upgrade as for a new installation.</p>
+<h3 id="removal">Removal</h3>
+<p>It a simple as deleteing the top directory:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">    <span class="kw">rm</span> -r /usr/local/go</code></pre>
+<p>and/or:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">    <span class="kw">rm</span> -r /media/work/lang/go</code></pre>
+<p>Do not forget to tidy your PATH.</p>
 <hr />
 <p><em>mpl-go</em> by NewForester. Notes licensed under a Creative Commons Attribution-ShareAlike 4.0 International Licence.</p>
 <!-- EOF -->
