@@ -48,6 +48,18 @@
 <p>and/or:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">    <span class="kw">rm</span> -r /media/work/lang/go</code></pre>
 <p>Do not forget to tidy your PATH.</p>
+<h2 id="platform-documentation">Platform Documentation</h2>
+<h3 id="online">Online</h3>
+<p>Is too early to comment on the standard and style of Go documentation online. I enjoyed the <a href="https://tour.golang.org/">Tour of Go</a> but found the standard library documentation overwhelming.</p>
+<p>The Go Project documentation is available here: <a href="https://golang.org/doc/">golang.org/doc</a>. This appears to be an index for all project documentation covering a wide range of topics.</p>
+<p>The standard library documentation is under <a href="https://golang.org/pkg/">https://golang.org/pkg/</a> but I expect other packages are documented elsewhere.</p>
+<p>There are references to other resources that may help find packages and their documentation that are not in the standard library.</p>
+<h3 id="offline">Offline</h3>
+<p>The tool for this is <a href="https://godoc.org/golang.org/x/tools/cmd/godoc">godoc</a>, which is installed by default. The tool is Swiss Army Knife: not all features are described here.</p>
+<p>Go documentation for commands and libraries is generated directly from the source code. The library used by <code>godoc</code> will generate either plain text or hhml.</p>
+<p>Thus the tool can be used from the command line to generate documentation in man page style. It can also be run as a local web-server and documentation accessed using a browser.</p>
+<p>Documentation for any installed command or library (including your own) can be generated without Internet access.</p>
+<p>The tool will also access the Internet (without asking permission). By default it will access the Go Project servers and so Go Project documentation but you can point it elsewhere to access documentation for other Go based projects without having to install the pertinent packages.</p>
 <hr />
 <p><em>mpl-go</em> by NewForester. Notes licensed under a Creative Commons Attribution-ShareAlike 4.0 International Licence.</p>
 <!-- EOF -->

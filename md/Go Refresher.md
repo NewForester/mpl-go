@@ -106,6 +106,40 @@ and/or:
 
 Do not forget to tidy your PATH.
 
+
+## Platform Documentation
+
+### Online
+
+Is too early to comment on the standard and style of Go documentation online.
+I enjoyed the [Tour of Go](https://tour.golang.org/) but found the standard library documentation overwhelming.
+
+The Go Project documentation is available here: [golang.org/doc](https://golang.org/doc/).
+This appears to be an index for all project documentation covering a wide range of topics.
+
+The standard library documentation is under [https://golang.org/pkg/](https://golang.org/pkg/)
+but I expect other packages are documented elsewhere.
+
+There are references to other resources that may help find packages and their documentation that are not in the standard library.
+
+### Offline
+
+The tool for this is [godoc](https://godoc.org/golang.org/x/tools/cmd/godoc), which is installed by default.
+The tool is Swiss Army Knife:  not all features are described here.
+
+Go documentation for commands and libraries is generated directly from the source code.
+The library used by `godoc` will generate either plain text or hhml.
+
+Thus the tool can be used from the command line to generate documentation in man page style.
+It can also be run as a local web-server and documentation accessed using a browser.
+
+Documentation for any installed command or library (including your own) can be generated without Internet access.
+
+The tool will also access the Internet (without asking permission).
+By default it will access the Go Project servers and so Go Project documentation but
+you can point it elsewhere to access documentation for other Go based projects
+without having to install the pertinent packages.
+
 ---
 
 *mpl-go* by NewForester.
