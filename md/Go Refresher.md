@@ -140,6 +140,28 @@ By default it will access the Go Project servers and so Go Project documentation
 you can point it elsewhere to access documentation for other Go based projects
 without having to install the pertinent packages.
 
+
+## Learning Materials
+
+I have not seen a definitive 'Go Book'.
+
+A good place to start is the [The Tour of Go](tour.golang.org/welcome/1) and good for dipping into is
+[Go by Example](https://gobyexample.com).
+
+There is a list of Go tutorials (etc.) on [hackr.io](https://hackr.io/tutorials/learn-golang) of which
+[The Little Go Book](https://hackr.io/tutorial/the-little-go-book) and
+[An Introduction to Programming in Go](https://hackr.io/tutorial/an-introduction-to-programming-in-go)
+have good titles.
+
+There is a [Go Wikibook](https://en.wikibooks.org/wiki/Go).
+
+There are [Go Koans](https://github.com/cdarwin/go-koans) on GitHub.
+These appears to cover a good number of topics.
+The respository dates from 2015 and the most recent commit was 2018 Q1.
+
+The [Exercism Go Track](http://exercism.io/languages/go/about) has 105 exercises.
+
+
 ---
 
 *mpl-go* by NewForester.
