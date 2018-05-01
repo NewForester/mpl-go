@@ -25,7 +25,7 @@ func Build(records []Record) (*Node, error) {
 		return nil, nil
 	} else if err := newChk(records); err != nil {
 		return nil, err
-	} else if root := newBuild(records, &Node{}); root == nil {
+	} else if root := newBuild(records); root == nil {
 		return nil, fmt.Errorf("Bad tree, naughty tree")
 	} else {
 		return root, nil
@@ -62,57 +62,26 @@ func newChk(records []Record) (err error) {
 }
 
 // newBuild builds the record tree their parent and record ids
-func newBuild(records []Record, root *Node) *Node {
-	node := root
+func newBuild(records []Record) *Node {
+	nodeArray := make([]Node, len(records))
 
 	for ii, record := range records {
+		nodeArray[ii].ID = ii
+
 		if ii != 0 {
-			if record.Parent != node.ID {
-				node = findNode(node, record.Parent)
+			node := &nodeArray[record.Parent]
 
-				if node == nil || node.ID != record.Parent {
-					node = findNode(root, record.Parent)
-				}
-
-				if node == nil || node.ID != record.Parent {
-					return nil
-				}
-			}
-
-			node.Children = append(node.Children, &Node{ID: record.ID})
+			node.Children = append(node.Children, &nodeArray[ii])
 		}
 	}
 
-	return root
-}
-
-// findNode returns the subnode with the given id or nil if not found
-func findNode(node *Node, id int) *Node {
-	for _, child := range node.Children {
-		if child.ID == id {
-			return child
-		} else if child.ID > id {
-			return nil
-		} else if node := findNode(child, id); node != nil {
-			return node
-		}
-	}
-
-	return nil
+	return &nodeArray[0]
 }
 
 //
-// A disappointing lot - no one gave any before/after benchmark figures,
-// only one had comments and one looked like the orignal.
+// This iteration uses a array of nodes to cut out long look up times.
 //
-// All flattened the loop structure, most used sort - something like
-// two on the children and four on all records.
+// The result for the first benchmark is something like 700 times faster.
 //
-// Several used a map or just an array to find a node given an ID where
-// I used a search routine.  I should have done that too.
-//
-// Several preallocated an array of nodes.  Good idea.
-//
-// Mine was about the longest solution - twice a long as the shortest.
-// Several did not look neat or tidy.
+// This is average length solution but still 20 lines longer than the shortest.
 //
